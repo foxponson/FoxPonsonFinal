@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main, footer, .photo-grid, nav ul, .about-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: Arial, serif;
+  line-height: 1.5;
+  color: #e6e6e6;
+  background-color: #06010e;
+  text-align: center;
+  padding: 1rem;
+  min-height: 100vh;
+  overflow-x: hidden;
+   background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #0e023a 25%,
+    #0c0342 45%,
+    #07042c 70%,
+    #000000 100%);
+  background-size: 100% 200%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  animation: gradientShift 30s ease-in-out infinite;
+
+}
+
+@keyframes gradientShift {
+
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+
+}
+
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/images/graphics/starrynight.webp');
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 150px 150px; 
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 0;  
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.logo-image {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+.wrapper {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+}
+
+.bottom img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+
+.top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  pointer-events: none; 
+  
+}
+
+.top img {
+  width: 48px;
+  height: auto;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  margin: 0.1rem 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #0099ff;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.cardo-regular {
+  font-family: "Cardo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cardo-bold {
+  font-family: "Cardo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-container {
+  text-align: justify;
+  text-align-last: center;
+  max-width: 500px;
+  hyphens: auto;
+}
+
+.about-container p {
+  hyphens: auto;
+  margin-bottom: 2rem;
+  word-spacing: .2px;
+}
+
+.about-container,
+.hobbies-container,
+.photography-container,
+.music-container {
+  font-family: "Cardo", serif;
+}
+
+.music-container {
+  margin-top: 2rem;
+}
+
+section {
+  margin-bottom: 12px;
+} 
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.photo-wrapper {
+    width:100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-item {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+#contact a {
+  color: #00ccff;
+}
+
+audio {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 519px) {
+  nav ul {
+    gap: .6rem;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 830px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1.6rem;
+  }
+}
+  
+  .photo-wrapper {
+
+    max-width: 400px;
+    margin: 0 auto;
+  }
